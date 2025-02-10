@@ -265,6 +265,9 @@ const ScheduleMessage = () => {
             }
     
             const data = await response.json();
+
+            console.log("data--------------",data);
+            
             setScheduledMessages(data);
         } catch (error) {
             console.error("⚠️ Error fetching messages:", error);
@@ -275,7 +278,7 @@ const ScheduleMessage = () => {
     // ✅ Setup WebSocket connection
     const setupWebSocket = () => {
         const stompClient = new Client({
-            brokerURL: "ws://localhost:8080/ws",
+            brokerURL: "ws://localhost:8080/ws/websocket",
             reconnectDelay: 5000,  // ✅ Auto-reconnect if connection fails
             heartbeatIncoming: 4000,
             heartbeatOutgoing: 4000,

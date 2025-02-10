@@ -50,16 +50,21 @@
         
 //     }
 // }
-
 package com.org.Account.ScheduleMessage;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 @RestController
-@RequestMapping
-@CrossOrigin(origins = "http://localhost:5173")  // ✅ Allow frontend access
+@RequestMapping("/api/messages")  // ✅ Fixed base path
+@CrossOrigin(origins = "http://localhost:5173")  
 public class ScheduledMessageController {
 
     private final ScheduledMessageService service;
